@@ -1,0 +1,1116 @@
+/* --- Root Variables for Colors --- */
+:root {
+    --primary-color: #6C5CE7;
+    --background-color: #FAFAFA;
+    --text-color: #1E1E1E;
+    --accent-color: #FBC84F;
+    --ui-neutral: #DCDDE1;
+    --border-radius: 8px; /* Consistent border radius */
+    --padding-sm: 10px;
+    --padding-md: 20px;
+    --padding-lg: 40px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+}
+
+/* --- Base Styles --- */
+body {
+    font-family: 'Poppins', sans-serif; /* Recommended a modern font like Poppins */
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex; /* For centering content on auth pages */
+    flex-direction: column;
+    min-height: 100vh; /* Ensures body takes full viewport height */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--padding-md);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+    margin-top: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: var(--padding-sm) var(--padding-md);
+    border-radius: var(--border-radius);
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none; /* Remove default button border */
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--text-color); /* Often black text on yellow looks good */
+    padding: var(--padding-md) var(--padding-lg); /* Larger for hero button */
+    font-size: 1.1em;
+}
+
+.btn-primary:hover {
+    filter: brightness(0.9); /* A simple way to darken without Sass */
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    color: #FFFFFF; /* White text on violet */
+}
+
+.btn-secondary:hover {
+    filter: brightness(0.9);
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: #FFFFFF; /* White background for navbar */
+    padding: var(--padding-md) 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.navbar .nav-links a {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-left: 0;
+}
+
+.navbar .nav-links a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.navbar .profile-icon {
+    display: inline-flex; /* To align image properly if it's an img tag */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 30px; /* Adjust size as needed */
+    height: 30px;
+    background-color: var(--ui-neutral);
+    color: #FFF;
+}
+
+.navbar .profile-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--text-color); /* Make the SVG icon color match text */
+}
+
+.navbar .profile-icon img {
+    border-radius: 50%; /* If user has a profile picture */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    text-align: center;
+    padding: var(--padding-lg) 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: var(--spacing-sm);
+    color: #FFFFFF;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Featured Courses Section --- */
+.featured-courses-section {
+    margin-bottom: var(--padding-lg);
+}
+
+.featured-courses-section h2 {
+    text-align: left;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2em;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.course-card {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: var(--padding-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.course-placeholder-image {
+    width: 100%;
+    height: 150px;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+}
+
+.course-card h3 {
+    font-size: 1.4em;
+    margin-bottom: var(--spacing-sm);
+}
+
+.course-card .course-description {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: var(--spacing-sm);
+    flex-grow: 1;
+}
+
+.course-card .course-price {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.course-card .btn-secondary {
+    width: 100%;
+}
+
+/* --- Form Specific Styles (New for this request) --- */
+.auth-container {
+    flex-grow: 1; /* Allows it to push footer down and center content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-lg) var(--padding-md); /* Add padding around the form */
+}
+
+.auth-card {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: var(--padding-lg);
+    width: 100%;
+    max-width: 400px; /* Max width for authentication forms */
+    text-align: center;
+}
+
+.auth-card h2 {
+    font-size: 2em;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color); /* Emphasize title with primary color */
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+    text-align: left; /* Align labels and inputs to the left */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"],
+.form-group input[type="tel"] {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: var(--padding-sm);
+    border: 1px solid var(--ui-neutral);
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2); /* Soft focus ring */
+}
+
+.auth-card .btn-primary {
+    width: 100%;
+    padding: var(--padding-md);
+    font-size: 1.1em;
+    margin-top: var(--spacing-md);
+}
+
+.auth-card .link-text {
+    margin-top: var(--spacing-md);
+    font-size: 0.9em;
+}
+
+.auth-card .link-text a {
+    font-weight: 600;
+}
+
+.error-message {
+    color: #e74c3c; /* Red for error messages */
+    font-size: 0.9em;
+    margin-top: var(--spacing-sm);
+    text-align: center;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+.success-message {
+    color: #27ae60; /* Green for success messages */
+    font-size: 0.9em;
+    margin-top: var(--spacing-sm);
+    text-align: center;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+/* --- Responsive Adjustments (reused from previous example) --- */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar .nav-links {
+        margin-top: var(--spacing-sm);
+    }
+    .navbar .nav-links a {
+        margin: 0 var(--spacing-sm);
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+
+    .auth-card {
+        padding: var(--padding-md); /* Less padding on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .nav-links a {
+        margin: 0 var(--spacing-sm) 0 0;
+    }
+    .navbar .nav-links a:last-child {
+        margin-right: 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .btn-primary {
+        padding: var(--padding-sm) var(--padding-md);
+        font-size: 1em;
+    }
+}
+
+/* --- Filter/Search Section Specific Styles --- */
+.filter-sort-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    align-items: flex-end;
+}
+
+.filter-sort-bar .form-group {
+    margin-bottom: 0;
+    flex: 1 1 auto;
+    min-width: 150px;
+}
+
+.filter-sort-bar .form-group label {
+    margin-bottom: var(--spacing-sm);
+}
+
+.filter-sort-bar button {
+    margin-bottom: 0;
+    padding: var(--padding-sm) var(--padding-md);
+    font-size: 1em;
+}
+
+/* --- Course Detail Page Specific Styles --- */
+.course-detail-section {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--padding-lg);
+}
+
+.course-detail-header {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.course-detail-header h1 {
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.course-detail-header p {
+    font-size: 1.2em;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.course-content-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.course-main-content {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: var(--padding-lg);
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.section-title:first-child {
+    margin-top: 0;
+}
+
+.module-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.module-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-sm);
+    padding: var(--padding-sm);
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+}
+
+.module-list li svg {
+    color: var(--primary-color);
+    margin-right: var(--spacing-sm);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.instructor-info {
+    display: flex;
+    align-items: center;
+    margin-top: var(--spacing-md);
+    padding: var(--padding-md);
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+}
+
+.instructor-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-md);
+    color: white;
+    flex-shrink: 0;
+}
+
+.instructor-details h3 {
+    margin: 0 0 var(--spacing-sm) 0;
+    color: var(--text-color);
+}
+
+.instructor-details p {
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.course-sidebar {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: var(--padding-lg);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.course-sidebar .price {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: var(--spacing-md) 0;
+    text-align: center;
+}
+
+.course-sidebar .btn-primary {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+}
+
+.course-sidebar .link-text {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.course-sidebar .link-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.course-sidebar .link-text a:hover {
+    text-decoration: underline;
+}
+
+.course-meta-info {
+    border-top: 1px solid var(--ui-neutral);
+    padding-top: var(--spacing-md);
+}
+
+.course-meta-info p {
+    margin: var(--spacing-sm) 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-meta-info strong {
+    color: var(--text-color);
+}
+
+.course-meta-info span {
+    color: #666;
+}
+
+/* Responsive Design for Course Detail */
+@media (max-width: 768px) {
+    .course-content-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .course-sidebar {
+        position: static;
+        order: -1;
+    }
+    
+    .course-detail-header h1 {
+        font-size: 2em;
+    }
+    
+    .course-main-content {
+        padding: var(--padding-md);
+    }
+    
+    .filter-sort-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* --- Checkout Page Specific Styles (New Additions) --- */
+.checkout-section {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--padding-lg);
+    flex-grow: 1; /* Allows it to take up remaining space and push footer down */
+}
+
+.checkout-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2.2em;
+    color: var(--primary-color);
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Cart summary slightly wider than payment form */
+    gap: var(--spacing-lg);
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: var(--padding-lg);
+}
+
+.order-summary, .payment-details {
+    padding: var(--padding-md);
+    border-radius: var(--border-radius);
+    background-color: var(--background-color); /* Lighter background for sections */
+}
+
+.order-summary h3, .payment-details h3 {
+    font-size: 1.6em;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--ui-neutral);
+    padding-bottom: var(--spacing-sm);
+}
+
+.order-items-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-sm) 0;
+    border-bottom: 1px dashed var(--ui-neutral);
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item-name {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.order-item-price {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.order-totals {
+    border-top: 2px solid var(--primary-color); /* Stronger line for totals */
+    padding-top: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.order-total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1em;
+}
+
+.order-total-row.grand-total {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.order-total-row.grand-total .amount {
+    color: var(--accent-color); /* Accent color for grand total */
+}
+
+.payment-form .form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Specific styles for card number, expiry, cvc layout */
+.card-details-row {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.card-details-row .form-group {
+    flex: 1; /* Distribute space evenly */
+}
+
+.payment-form .btn-primary {
+    width: 100%;
+    margin-top: var(--spacing-lg);
+}
+
+/* Responsive Adjustments for Checkout Page */
+@media (max-width: 992px) {
+    .checkout-layout {
+        grid-template-columns: 1fr; /* Stack columns on tablets and smaller */
+        padding: var(--padding-md);
+    }
+    .order-summary, .payment-details {
+        padding: var(--padding-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-layout {
+        padding: var(--padding-sm);
+    }
+    .order-summary h3, .payment-details h3 {
+        font-size: 1.4em;
+    }
+    .card-details-row {
+        flex-direction: column; /* Stack expiry and cvc on very small screens */
+        gap: var(--spacing-sm);
+    }
+
+
+/* --- Order Success Page Specific Styles (New Addition) --- */
+.order-success-section {
+    flex-grow: 1; /* Ensures it takes up space and pushes footer down */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-lg) var(--padding-md);
+    text-align: center;
+}
+
+.success-card {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: var(--padding-lg);
+    width: 100%;
+    max-width: 600px; /* Max width for the success message card */
+}
+
+.success-card .icon-check {
+    color: #27ae60; /* Green checkmark */
+    font-size: 4em; /* Large icon */
+    margin-bottom: var(--spacing-md);
+}
+
+.success-card h2 {
+    font-size: 2.5em;
+    color: #27ae60; /* Green for success heading */
+    margin-bottom: var(--spacing-sm);
+}
+
+.success-card p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.success-card .order-details {
+    background-color: var(--background-color); /* Light background for details */
+    padding: var(--padding-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
+    border: 1px dashed var(--ui-neutral);
+}
+
+.success-card .order-details p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+.success-card .btn-primary {
+    margin-top: var(--spacing-md);
+}
+
+/* Responsive Adjustments for Order Success Page */
+@media (max-width: 600px) {
+    .success-card {
+        padding: var(--padding-md);
+    }
+    .success-card h2 {
+        font-size: 2em;
+    }
+    .success-card p {
+        font-size: 1em;
+    }
+}
+/* --- My Courses / Dashboard Page Specific Styles (New Additions) --- */
+.my-courses-section {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--padding-lg);
+    flex-grow: 1; /* Ensures it takes up remaining space and pushes footer down */
+}
+
+.my-courses-section h2 {
+    text-align: left;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2.2em;
+    color: var(--text-color);
+}
+
+.my-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Larger cards for My Courses */
+    gap: var(--spacing-lg);
+}
+
+.my-course-card {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: var(--padding-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.my-course-card .course-thumbnail {
+    width: 100%;
+    height: 180px; /* Slightly larger thumbnail */
+    background-color: var(--primary-color); /* Soft Violet */
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    background-size: cover;
+    background-position: center;
+    display: flex; /* For centering text if no image */
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.my-course-card h3 {
+    font-size: 1.5em;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-color);
+}
+
+.my-course-card .progress-bar-container {
+    background-color: var(--ui-neutral);
+    border-radius: 5px;
+    height: 10px;
+    margin-bottom: var(--spacing-sm);
+    overflow: hidden;
+}
+
+.my-course-card .progress-bar {
+    height: 100%;
+    width: 0%; /* Will be set by JS */
+    background-color: var(--accent-color); /* Rich Golden Yellow */
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.my-course-card .progress-text {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: var(--spacing-md);
+    text-align: right; /* Align progress text to the right */
+}
+
+.my-course-card .btn-primary {
+    width: 100%;
+    padding: var(--padding-sm) var(--padding-md); /* Slightly smaller button for cards */
+}
+
+/* Responsive Adjustments for My Courses Page */
+@media (max-width: 768px) {
+    .my-courses-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+        gap: var(--spacing-md);
+    }
+}
+/* --- Course Player Page Specific Styles (New Additions) --- */
+.course-player-section {
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--padding-lg);
+    flex-grow: 1;
+}
+
+.course-player-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Main video area and sidebar for lessons */
+    gap: var(--spacing-lg);
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: var(--padding-md); /* Slightly less padding for the whole layout container */
+}
+
+.video-player-area {
+    display: flex;
+    flex-direction: column;
+    background-color: #000; /* Black background for video player */
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Ensures video corners are rounded */
+}
+
+.video-player-area video {
+    width: 100%;
+    max-height: 60vh; /* Max height relative to viewport for video */
+    display: block;
+    background-color: #000;
+    outline: none; /* Remove outline on focus */
+}
+
+/* Hide default video controls for custom controls later, or to simplify */
+.video-player-area video::-webkit-media-controls {
+    display: none !important;
+}
+.video-player-area video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+.video-info {
+    padding: var(--padding-md);
+    background-color: #FFFFFF;
+    color: var(--text-color);
+    border-top: 1px solid var(--ui-neutral);
+}
+
+.video-info h3 {
+    font-size: 1.8em;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.video-info p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: var(--spacing-md);
+}
+
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+}
+
+.lesson-navigation .btn {
+    flex: 1; /* Make buttons take equal width */
+    padding: var(--padding-sm);
+    font-size: 0.95em;
+}
+
+.lesson-sidebar {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    padding: var(--padding-md);
+    overflow-y: auto; /* Enable scrolling for long lesson lists */
+    max-height: calc(100vh - 200px); /* Adjust based on header/footer height */
+}
+
+.lesson-sidebar h3 {
+    font-size: 1.6em;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--ui-neutral);
+    padding-bottom: var(--spacing-sm);
+}
+
+.lesson-list {
+    list-style: none;
+    padding: 0;
+}
+
+.lesson-list li {
+    padding: var(--padding-sm);
+    margin-bottom: 5px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.95em;
+    color: var(--text-color);
+}
+
+.lesson-list li:hover {
+    background-color: var(--background-color); /* Lighter hover effect */
+}
+
+.lesson-list li.active {
+    background-color: var(--primary-color); /* Active lesson in violet */
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.lesson-list li.active svg {
+    fill: #FFFFFF; /* White icon for active lesson */
+}
+
+.lesson-list li svg {
+    fill: var(--primary-color); /* Violet icon for inactive lessons */
+    width: 18px;
+    height: 18px;
+}
+
+/* Responsive Adjustments for Course Player Page */
+@media (max-width: 992px) {
+    .course-player-layout {
+        grid-template-columns: 1fr; /* Stack video and sidebar on tablets */
+    }
+    .video-player-area video {
+        max-height: 50vh;
+    }
+    .lesson-sidebar {
+        max-height: 400px; /* Adjust sidebar height when stacked */
+    }
+}
+
+@media (max-width: 600px) {
+    .video-player-area video {
+        max-height: 40vh;
+    }
+    .video-info h3 {
+        font-size: 1.5em;
+    }
+    .lesson-navigation {
+        flex-direction: column; /* Stack prev/next buttons on small phones */
+    }
+}
+/* --- User Profile Page Specific Styles (New Additions) --- */
+.profile-section {
+    flex-grow: 1; /* Ensures it takes up remaining space and pushes footer down */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-lg) var(--padding-md);
+}
+
+.profile-card {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: var(--padding-lg);
+    width: 100%;
+    max-width: 600px; /* Wider than auth cards for more content */
+    text-align: center;
+}
+
+.profile-card h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.profile-info-display {
+    text-align: left;
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--ui-neutral);
+    padding-bottom: var(--spacing-md);
+}
+
+.profile-info-display p {
+    font-size: 1.1em;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-color);
+}
+
+.profile-info-display strong {
+    min-width: 100px; /* Align labels */
+    display: inline-block;
+    color: #555;
+}
+
+.profile-info-display span {
+    font-weight: 500;
+}
+
+.profile-edit-form {
+    text-align: left;
+    margin-top: var(--spacing-lg);
+}
+
+/* Reuse .form-group styles for inputs */
+/* Reuse .btn-primary and .btn-secondary styles for buttons */
+
+.profile-actions {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.profile-actions .btn {
+    padding: var(--padding-sm) var(--padding-md);
+    font-size: 1em;
+}
+
+/* Hide elements based on mode */
+.view-mode .profile-edit-form,
+.view-mode .profile-actions .save-btn,
+.view-mode .profile-actions .cancel-btn {
+    display: none;
+}
+
+.edit-mode .profile-info-display,
+.edit-mode .profile-actions .edit-btn {
+    display: none;
+}
+
+.edit-mode .profile-edit-form,
+.edit-mode .profile-actions .save-btn,
+.edit-mode .profile-actions .cancel-btn {
+    display: block; /* Or flex, inline-block as needed for layout */
+}
+
+/* Responsive Adjustments for Profile Page */
+@media (max-width: 600px) {
+    .profile-card {
+        padding: var(--padding-md);
+    }
+    .profile-card h2 {
+        font-size: 1.8em;
+    }
+    .profile-info-display p {
+        font-size: 1em;
+    }
+    .profile-info-display strong {
+        min-width: 80px;
+    }
+    .profile-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: var(--spacing-sm);
+    }
+    .profile-actions .btn {
+        width: 100%;
+    }
+}
+}
