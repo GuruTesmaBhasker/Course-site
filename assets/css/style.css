@@ -1113,4 +1113,41 @@ a:hover {
         width: 100%;
     }
 }
+/* --- 404 Page Specific Styles (New Additions) --- */
+.not-found-section {
+    flex-grow: 1; /* Ensures it takes up remaining space and pushes footer down */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--padding-lg) var(--padding-md);
+}
+
+.not-found-card {
+    background-color: #FFFFFF;
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: var(--padding-lg);
+    width: 100%;
+    max-width: 600px;
+}
+
+.not-found-card .error-code {
+    font-size: 6em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.not-found-card h2 {
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.not-found-card p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: var(--spacing-lg);
+}
 }
