@@ -3,37 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Success - Course Platform</title>
+    <title>Order Confirmed! - Course Platform</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="navbar">
         <div class="container">
-            <div class="logo">
-                <a href="../index.html" style="color: inherit; text-decoration: none;">Course</a>
-            </div>
+            <div class="logo">Course</div>
             <nav class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="courses.html">Courses</a>
-                <a href="../auth/login.html">Log In</a>
-                <a href="../auth/Signup.html">Sign Up</a>
+                <a href="login.html" style="display: none;">Log In</a>
+                <a href="signup.html" style="display: none;">Sign Up</a>
+                <a href="profile.html" class="profile-icon">
+                    <!-- User icon SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </a>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
             </nav>
         </div>
     </header>
 
     <main>
-        <div class="container">
-            <h1>Order Successful!</h1>
-            <p>Thank you for your purchase. You can now access your course.</p>
-        </div>
+        <section class="order-success-section container">
+            <div class="success-card">
+                <div class="icon-check">
+                    <!-- Checkmark SVG Icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                </div>
+                <h2>Order Confirmed!</h2>
+                <p>Thank you for your purchase. Your order has been successfully placed.</p>
+
+                <div class="order-details">
+                    <p><strong>Order ID:</strong> <span id="orderId">#XYZ12345</span></p>
+                    <p><strong>Total Amount:</strong> <span id="totalAmount">$209.99</span></p>
+                    <p><strong>Courses Purchased:</strong> <span id="coursesPurchased">3</span></p>
+                </div>
+
+                <p>You can now access your purchased courses from your dashboard.</p>
+                <a href="my-courses.html" class="btn btn-primary">Go to My Courses</a>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer for a complete page experience -->
     <footer style="background-color: #333; color: #FFF; text-align: center; padding: 20px 0; margin-top: auto;">
         <div class="container">
             <p>&copy; 2025 Course Platform. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Common JavaScript (for navbar behavior, utilities) -->
     <script src="../assets/js/main.js"></script>
 </body>
 </html>

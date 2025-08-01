@@ -5,35 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Courses - Course Platform</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Google Fonts for Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="navbar">
         <div class="container">
-            <div class="logo">
-                <a href="../index.html" style="color: inherit; text-decoration: none;">Course</a>
-            </div>
+            <div class="logo">Course</div>
             <nav class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="courses.html">Courses</a>
-                <a href="../auth/login.html">Log In</a>
-                <a href="../auth/Signup.html">Sign Up</a>
+                <a href="login.html" style="display: none;">Log In</a>
+                <a href="signup.html" style="display: none;">Sign Up</a>
+                <a href="profile.html" class="profile-icon">
+                    <!-- User icon SVG -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </a>
+                <!-- Logout button (will be handled by JS) -->
+                <button id="logoutBtn" class="btn btn-secondary" style="display: none;">Logout</button>
             </nav>
         </div>
     </header>
 
     <main>
-        <div class="container">
-            <h1>My Courses</h1>
-            <p>View your enrolled courses.</p>
-        </div>
+        <section class="my-courses-section container">
+            <h2>My Courses</h2>
+            <div class="my-courses-grid" id="myCoursesGrid">
+                <!-- Course cards will be dynamically loaded here by JavaScript -->
+
+                <!-- Example Static Card (will be replaced by JS) -->
+                <div class="my-course-card">
+                    <div class="course-thumbnail" style="background-image: url('https://placehold.co/400x180/6C5CE7/FFFFFF?text=Web+Dev');"></div>
+                    <h3>Mastering Web Development</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 75%;"></div>
+                    </div>
+                    <p class="progress-text">75% Complete</p>
+                    <a href="watch-course.html?id=web-dev&lesson=1" class="btn btn-primary">Resume Course</a>
+                </div>
+
+                <div class="my-course-card">
+                    <div class="course-thumbnail" style="background-image: url('https://placehold.co/400x180/6C5CE7/FFFFFF?text=Data+Science');"></div>
+                    <h3>Data Science with Python</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 20%;"></div>
+                    </div>
+                    <p class="progress-text">20% Complete</p>
+                    <a href="watch-course.html?id=data-science&lesson=1" class="btn btn-primary">Start Course</a>
+                </div>
+
+                <div class="my-course-card">
+                    <div class="course-thumbnail" style="background-image: url('https://placehold.co/400x180/6C5CE7/FFFFFF?text=Graphic+Design');"></div>
+                    <h3>Fundamentals of Graphic Design</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 100%;"></div>
+                    </div>
+                    <p class="progress-text">100% Complete</p>
+                    <a href="watch-course.html?id=graphic-design&lesson=last" class="btn btn-primary">Review Course</a>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer for a complete page experience -->
     <footer style="background-color: #333; color: #FFF; text-align: center; padding: 20px 0; margin-top: auto;">
         <div class="container">
             <p>&copy; 2025 Course Platform. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="../assets/js/main.js"></script>
+    <!-- Common JavaScript (for navbar behavior, utilities) -->
+    <script src="../assets/js/common.js"></script>
+    <!-- Page-specific JavaScript -->
+    <script src="../assets/js/my-courses.js"></script>
 </body>
 </html>
